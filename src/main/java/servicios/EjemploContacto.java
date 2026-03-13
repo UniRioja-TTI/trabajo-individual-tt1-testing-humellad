@@ -9,7 +9,7 @@ import modelo.DatosSolicitud;
 import modelo.Entidad;
 
 @Service
-public class EjemploServicio implements interfaces.InterfazContactoSim{
+public class EjemploContacto implements interfaces.InterfazContactoSim{
 
 	@Override
 	public int solicitarSimulation(DatosSolicitud sol) {
