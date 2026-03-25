@@ -1,12 +1,13 @@
 package servicios;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.slf4j.*;
+
+import modelo.Destinatario;
+
+import org.junit.jupiter.api.*;
 
 class EjemploEmailTest {
 
@@ -27,8 +28,22 @@ class EjemploEmailTest {
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testEnviarEmail() {
+		LoggerConfig config = new LoggerConfig();
+		Logger log = config.simulationLogger();
+		EjemploEmails ej = new EjemploEmails(log);
+		Destinatario dest = new Destinatario();
+		String email1 = "abc@gmail.com";
+		String email2 = "def@gmail.com";
+		String email3 = "ghi@gmail.com";
+		ej.enviarEmail(dest, email1);
+		ej.enviarEmail(dest, email2);
+		ej.enviarEmail(dest, email3);
+		
+		verify(log).info(email1);
+		verify(log).info(email2);
+		verify(log).info(email3);
+		System.out.println("Correcto");
 	}
 
 }
