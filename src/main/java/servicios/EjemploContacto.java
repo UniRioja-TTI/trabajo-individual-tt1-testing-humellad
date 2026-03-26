@@ -54,7 +54,7 @@ public class EjemploContacto implements interfaces.InterfazContactoSim{
 
 	@Override
 	public boolean isValidEntityId() {
-		return false;
+		return true;
 	}
 
 }
