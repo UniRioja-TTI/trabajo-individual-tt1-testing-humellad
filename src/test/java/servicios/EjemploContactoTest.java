@@ -42,11 +42,15 @@ class EjemploContactoTest {
 		int t3=ej.solicitarSimulation(d3);
 		datos.put(4, 4);
 		DatosSolicitud d4= new DatosSolicitud(datos);
-		int t4=ej.solicitarSimulation(d4);
+		int t4=ej.solicitarSimulation(d4);		
 		assertNotNull(t1);
 		assertNotNull(t2);
 		assertNotNull(t3);
 		assertNotNull(t4);
+		System.out.println("t1="+t1);
+		System.out.println("t2="+t2);
+		System.out.println("t3="+t3);
+		System.out.println("t4="+t4);
 		assertEquals(ej.solicitudes.get(t1), d1);
 		assertEquals(ej.solicitudes.get(t2), d2);
 		assertEquals(ej.solicitudes.get(t3), d3);

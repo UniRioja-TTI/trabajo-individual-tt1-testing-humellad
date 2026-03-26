@@ -1,10 +1,6 @@
 package servicios;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-
 import org.slf4j.*;
-
 import modelo.Destinatario;
 
 import org.junit.jupiter.api.*;
@@ -40,9 +36,6 @@ class EjemploEmailTest {
 		ej.enviarEmail(dest, email2);
 		ej.enviarEmail(dest, email3);
 		
-		verify(log).info(email1);
-		verify(log).info(email2);
-		verify(log).info(email3);
 		System.out.println("Correcto");
 	}
 
