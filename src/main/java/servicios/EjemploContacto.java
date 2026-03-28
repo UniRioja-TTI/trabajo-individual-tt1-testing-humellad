@@ -37,9 +37,13 @@ public class EjemploContacto implements interfaces.InterfazContactoSim{
     
 	@Override
 	public int solicitarSimulation(DatosSolicitud sol) {
-		int token = this.random.nextInt();
-		this.solicitudes.put(token, sol);
-		return token;
+		if(sol==null){
+            return -1;
+        }
+		
+        int token = this.random.nextInt(9999999);
+        solicitudes.put(token,sol);
+        return token;
 	}
 
 	@Override
